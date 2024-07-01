@@ -1,7 +1,7 @@
 [
   {
     "name": "terraform-pipeline",
-    "repo": "https://github.com/ityourway/springboot-app-ci-cd.git",
+    "repo": "https://github.com/Safoa12/springboot-app-ci-ccd",
     "branch": "main",
     "jenkinsfile": "terraform/Jenkinsfile"
   }
