@@ -26,6 +26,7 @@ pipeline {
                 }
             }
         }
+    
 
         stage('Copy Ansible Files') {
             steps {
@@ -47,7 +48,7 @@ pipeline {
         }
     }
 }
-
+    
     
         stage('Run Playbooks On Ansible Server') {
             steps {
