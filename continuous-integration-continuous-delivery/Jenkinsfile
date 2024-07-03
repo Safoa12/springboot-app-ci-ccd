@@ -14,7 +14,7 @@ pipeline {
         string(name: 'GITHUB_REPO_URL', defaultValue: 'https://github.com/Safoa12/springboot-app-ci-ccd.git', description: 'Github repository url')
         string(name: 'GITHUB_BRANCH', defaultValue: 'main', description: 'Github branch for your build')
         string(name: 'SONARQUBE_SERVER_NAME', defaultValue: 'sonarqube_server', description: 'Name for your sonarqube server')
-        string(name: 'NEXUS_URL', defaultValue: '174.129.48.146:8081', description: 'Your Nexus URL')
+        string(name: 'NEXUS_URL', defaultValue: '34.236.158.100:8081', description: 'Your Nexus URL')
         string(name: 'NEXUS_CREDENTIAL', defaultValue: 'jenkins_nexus_creds', description: 'Your Nexus Credentials')
     }
 
@@ -98,7 +98,7 @@ pipeline {
                     artifacts: [
                         [artifactId: artifactId,
                          classifier: '',
-                         file: artifactPath,
+                         filename: artifactPath,
                          type: packaging,
                          filename: "${artifactId}-${version}.${packaging}"]
                     ]
