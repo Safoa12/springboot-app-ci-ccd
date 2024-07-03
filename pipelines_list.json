@@ -10,6 +10,12 @@
     "repo": "https://github.com/Safoa12/springboot-app-ci-ccd",
     "branch": "main",
     "jenkinsfile": "ansible/Jenkinsfile"
+  },
+  {
+    "name": "continuous-integration-pipline",
+    "repo": "https://github.com/Safoa12/springboot-app-ci-ccd",
+    "branch": "main",
+    "jenkinsfile": "continuous-integration/Jenkinsfile"
   }
   
 ]
