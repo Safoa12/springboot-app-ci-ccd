@@ -1,16 +1,16 @@
 pipeline { 
     agent any
     options {
-        timeout(time: 20, unit: 'MINUTES')
+        timeout(time: 10, unit: 'MINUTES')
     }
 
     parameters {
         string(name: 'IMAGE_TAG', defaultValue: "${BUILD_ID}", description: 'Docker image tag')
-        string(name: 'DOCKER_IMAGE', defaultValue: 'akosua12/springboot-app-ci-ccd', description: 'Docker image name')
+        string(name: 'DOCKER_IMAGE', defaultValue: 'akosua12/springboot-app-ci-cd', description: 'Docker image name')
         string(name: 'CONTAINER_NAME', defaultValue: 'springboot-app', description: 'Docker container name')
-        string(name: 'REGISTRY', defaultValue: 'akosua12/springboot-app-ci-ccd', description: 'Your Docker registry repository Name')
+        string(name: 'REGISTRY', defaultValue: 'akosua12/springboot-app-ci-cd', description: 'Your Docker registry repository Name')
         string(name: 'REGISTRY_CREDENTIAL', defaultValue: 'dockerhub-creds', description: 'Docker registry credentials id')
-        string(name: 'GITHUB_CREDENTIAL', defaultValue: 'jenkins-github_creds', description: 'Github access credentials id')
+        string(name: 'GITHUB_CREDENTIAL', defaultValue: 'jenkins_github_creds', description: 'Github access credentials id')
         string(name: 'GITHUB_REPO_URL', defaultValue: 'https://github.com/Safoa12/springboot-app-ci-ccd.git', description: 'Github repository url')
         string(name: 'GITHUB_BRANCH', defaultValue: 'main', description: 'Github branch for your build')
         string(name: 'SONARQUBE_SERVER_NAME', defaultValue: 'sonarqube_server', description: 'Name for your sonarqube server')
@@ -64,17 +64,6 @@ pipeline {
                 sh './mvnw test'
             }
         }
-        stage('Verify Jar File') {
-            steps {
-                script {
-                    def artifactPath = "target/blog-0.0.1-SNAPSHOT.jar"
-                    if (!fileExists(artifactPath)) {
-                        error "File not found: ${artifactPath}"
-                    }
-                }
-            }
-        }
-
 
         stage('SonarQube Analysis') {
             steps {
@@ -111,7 +100,7 @@ pipeline {
                          classifier: '',
                          file: artifactPath,
                          type: packaging,
-                         file:"${artifactId}-${version}.${packaging}"]
+                         filename: "${artifactId}-${version}.${packaging}"]
                     ]
                 )
             }
