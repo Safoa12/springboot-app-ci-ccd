@@ -64,6 +64,17 @@ pipeline {
                 sh './mvnw test'
             }
         }
+        stage('Verify Jar File') {
+            steps {
+                script {
+                    def artifactPath = "target/blog-0.0.1-SNAPSHOT.jar"
+                    if (!fileExists(artifactPath)) {
+                        error "File not found: ${artifactPath}"
+                    }
+                }
+            }
+        }
+
 
         stage('SonarQube Analysis') {
             steps {
