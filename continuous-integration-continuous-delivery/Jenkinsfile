@@ -99,7 +99,8 @@ pipeline {
                         [artifactId: artifactId,
                          classifier: '',
                          file: artifactPath,
-                         type: packaging,]
+                         type: packaging,
+                         file:"${artifactId}-${version}.${packaging}"]
                     ]
                 )
             }
