@@ -28,6 +28,12 @@
     "repo": "https://github.com/Safoa12/springboot-app-ci-ccd",
     "branch": "main",
     "jenkinsfile": "continuous-deployment/Jenkinsfile"
+  },
+  {
+    "name": "continuous-integration-continuous-deployment-pipeline",
+    "repo": "https://github.com/Safoa12/springboot-app-ci-ccd",
+    "branch": "main",
+    "jenkinsfile": "continuous-integration-continuous-deployment/Jenkinsfile"
   }
   
 ]
