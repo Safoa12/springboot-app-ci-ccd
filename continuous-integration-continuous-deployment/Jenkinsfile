@@ -9,7 +9,7 @@ pipeline {
         string(name: 'CONTAINER_NAME', defaultValue: 'springboot-app', description: 'Docker container name')
         string(name: 'REGISTRY', defaultValue: 'akosua12/springboot-app-ci-ccd', description: 'Your Docker registry repository Name')
         string(name: 'REGISTRY_CREDENTIAL', defaultValue: 'dockerhub-creds', description: 'Docker registry credentials id')
-        string(name: 'GITHUB_CREDENTIAL', defaultValue: 'jenkins_github_creds', description: 'Github access credentials id')
+        string(name: 'GITHUB_CREDENTIAL', defaultValue: 'jenkins-github_creds', description: 'Github access credentials id')
         string(name: 'GITHUB_REPO_URL', defaultValue: 'https://github.com/Safoa12/springboot-app-ci-ccd.git', description: 'Github repository url')
         string(name: 'GITHUB_BRANCH', defaultValue: 'main', description: 'Github branch for your build')
         string(name: 'SONARQUBE_SERVER_NAME', defaultValue: 'sonarqube_server', description: 'Name for your sonarqube server')
