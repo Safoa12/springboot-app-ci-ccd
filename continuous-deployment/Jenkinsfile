@@ -10,7 +10,7 @@ pipeline {
         string(name: 'DOCKER_IMAGE', description: 'Existing Docker Image To Be Deployed From Your DockerHub Registry.Optional If DEPLOYMENT_ACTION = Monolithic_Deployment  Eg: ityourway/springboot-app-ci-cd:V004')
         string(name: 'CONTAINER_NAME', description: 'Your Preffered Name For Container To Be Created. Optional If DEPLOYMENT_ACTION = Monolithic_Deployment')
         string(name: 'JAR_FILE_NAME', description: 'Name Of The Existing Jar File In Nexus To be Deployed. Optional If DEPLOYMENT_ACTION = Microservice_Deployment Eg : blog-0.0.1-20240606.064611-3.jar')
-        string(name: 'NEXUS_JAR_FILE_URL', description: 'URL Of The Existing Jar File In Nexus To be Deployed. Optional If DEPLOYMENT_ACTION = Microservice_Deployment. Eg : http://44.204.99.33:8081/repository/maven-snapshots/com/app/blog/0.0.1-SNAPSHOT/blog-0.0.1-20240606.064611-3.jar')
+        string(name: 'NEXUS_JAR_FILE_URL', description: 'URL Of The Existing Jar File In Nexus To be Deployed. Optional If DEPLOYMENT_ACTION = Microservice_Deployment. Eg : http://50.17.15.151:8081/repository/maven-snapshots/com/app/blog/0.0.1-SNAPSHOT/blog-0.0.1-20240606.064611-3.jar')
         string(name: 'REMOTE_USER', defaultValue: 'ec2-user', description: 'Remote server username. Mandatory Field')
         string(name: 'MICROSERVICE_SERVER', defaultValue: 'microservice_server', description: 'The microservice server that Jenkins will SSH into Using Publish Over SSH. Optional If DEPLOYMENT_ACTION = Monolithic_Deployment')
         string(name: 'MONOLITHIC_SERVER', defaultValue: 'monolithic_server', description: 'The monolithic server that Jenkins will SSH into Using Publish Over SSH. Optional If DEPLOYMENT_ACTION = Microservice_Deployment')
