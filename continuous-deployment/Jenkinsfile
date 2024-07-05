@@ -130,7 +130,7 @@ services:
                     
                     # Export Variables To Retrieve Secrets from Secrets Manager
                     export ARN="${SECRETS_ARN}"
-                    secret=$(aws secretsmanager get-secret-value --secret-id "${ARN}" --query "SecretString" --output=text)
+                    secret=$(aws secretsmanager get-secret-value --secret-id "${ARN}" --region us-east-1 --query "SecretString" --output=text)
                     
                     if [ $? -ne 0 ]; then
                         echo "Failed to retrieve secrets"
